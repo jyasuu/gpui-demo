@@ -1,0 +1,23 @@
+# Start with a VNC service with a new dedicated Docker image
+image:
+  file: .gitpod.Dockerfile
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - name: install dev env
+  - init: |
+        rustup update 1.85.1
+        rustup default 1.85.1
+    command: |
+        rustup update 1.85.1
+        rustup default 1.85.1
+
+
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+vscode:
+    extensions:
+        - rust-lang.rust-analyzer
+        - saoudrizwan.claude-dev
